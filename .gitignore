@@ -22,3 +22,4 @@ Ch5_filternet/inputs/rates.*.h5
 Ch5_filternet/inputs/spikes.*.csv
 Ch5_filternet/inputs/config*json
 ephys_inputs/
+Ch7_dpointnet/Ch7.1_introduction/callbacks_outputs/
