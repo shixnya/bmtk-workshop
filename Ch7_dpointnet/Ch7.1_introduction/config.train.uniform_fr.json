@@ -1,12 +1,12 @@
 {
   "manifest": {
     "$BASE_DIR": ".",
-    "$OUTPUT_DIR": "$BASE_DIR/output",
+    "$OUTPUT_DIR": "$BASE_DIR/output_uniform_fr",
     "$NETWORK_DIR": "$BASE_DIR/network",
     "$MODELS_DIR": "$BASE_DIR/components"
   },
   
-  "target_simulator": "dpointnet",
+  "target_simulator": "DPointNet",
 
   "run": {
     "seq_len": 500,
@@ -68,7 +68,12 @@
     "callbacks": {
       "class": "Callbacks",
       "starting_epoch": 0,
-      "verbose": "on_step"
+      "verbose": "on_step",
+      "callbacks_dir": "training_uniform_fr",
+      "epoch_store_weights": "best",
+      "sonata_output_dir": "network_uniformed_weights",
+      "losses_table_csv": "losses.csv",
+      "performance_table_csv": "performance.csv"
     },
     "parameters": [
       {
