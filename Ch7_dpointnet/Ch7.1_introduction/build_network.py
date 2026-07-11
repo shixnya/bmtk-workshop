@@ -33,7 +33,7 @@ cm = rnet.add_edges(
 )
 cm.add_properties(
     names='syn_weight',
-    rule=lambda *_: np.random.uniform(5.0, 30.0)
+    rule=lambda *_: np.random.uniform(1.0, 30.0)
 )
 
 cm = rnet.add_edges(
@@ -45,7 +45,7 @@ cm = rnet.add_edges(
 )
 cm.add_properties(
     names='syn_weight',
-    rule=lambda *_: np.random.uniform(5.0, 30.0)
+    rule=lambda *_: np.random.uniform(1.0, 30.0)
 )
 
 cm = rnet.add_edges(
@@ -57,7 +57,7 @@ cm = rnet.add_edges(
 )
 cm.add_properties(
     names='syn_weight',
-    rule=lambda *_: np.random.uniform(-1.0, -20.0)
+    rule=lambda *_: np.random.uniform(-1.0, -30.0)
 )
 
 cm = rnet.add_edges(
@@ -69,7 +69,7 @@ cm = rnet.add_edges(
 )
 cm.add_properties(
     names='syn_weight',
-    rule=lambda *_: np.random.uniform(-1.0, -20.0)
+    rule=lambda *_: np.random.uniform(-1.0, -30.0)
 )
 
 rnet.build()
@@ -92,7 +92,7 @@ cm = vnet.add_edges(
 )
 cm.add_properties(
     names='syn_weight',
-    rule=lambda *_: np.random.uniform(5.0, 50.0)
+    rule=lambda *_: np.random.uniform(1.0, 30.0)
 )
 
 cm = vnet.add_edges(
@@ -104,7 +104,7 @@ cm = vnet.add_edges(
 )
 cm.add_properties(
     names='syn_weight',
-    rule=lambda *_: np.random.uniform(5.0, 50.0)
+    rule=lambda *_: np.random.uniform(1.0, 30.0)
 )
 
 vnet.build()

@@ -39,7 +39,7 @@
             "node_set": "virts",
             "input": "spikes",
             "module": "bernoulli_spikes",
-            "firing_rate": 10.0
+            "firing_rate": 30.0
         }
     },
 

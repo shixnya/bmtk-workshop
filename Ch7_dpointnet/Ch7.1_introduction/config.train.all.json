@@ -38,7 +38,7 @@
         "node_set": "virts",
         "input": "spikes",
         "module": "bernoulli_spikes",
-        "firing_rate": 50.0
+        "firing_rate": 30.0
       }
   },
 
@@ -46,7 +46,7 @@
       "module": "zero_state"
   },
 
-  "training": {
+  "trainingX": {
     "n_epochs": 10,
     "steps_per_epoch": 5,
     "training_approach": "series",

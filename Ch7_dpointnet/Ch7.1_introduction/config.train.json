@@ -6,7 +6,7 @@
     "$MODELS_DIR": "$BASE_DIR/components"
   },
   
-  "target_simulator": "RNN",
+  "target_simulator": "dpointnet",
 
   "run": {
     "seq_len": 500,
@@ -38,7 +38,7 @@
         "node_set": "virts",
         "input": "spikes",
         "module": "bernoulli_spikes",
-        "firing_rate": 10.0
+        "firing_rate": 50.0
       }
   },
 
@@ -47,12 +47,12 @@
   },
 
   "training": {
-    "n_epochs": 3,
-    "steps_per_epoch": 5,
+    "n_epochs": 5,
+    "steps_per_epoch": 10,
     "training_approach": "series",
     "learning_rate": {
       "schedule": "warmup_cosine",
-      "warmup_start_lr": 0.08,
+      "warmup_start_lr": 0.001,
       "warmup_target_lr": 0.04,
       "warmup_steps": 120,
       "cosine_steps": 880,
@@ -79,7 +79,7 @@
         "loss_functions": {
           "firing_rate_regularizer": {
             "module": "TargetFiringRate",
-            "firing_rate": 20.0
+            "firing_rate": 25.0
           },
           "voltage_regularizer": {
             "module": "VoltageRegularization",
