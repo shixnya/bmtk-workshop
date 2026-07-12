@@ -23,3 +23,4 @@ Ch5_filternet/inputs/spikes.*.csv
 Ch5_filternet/inputs/config*json
 ephys_inputs/
 Ch7_dpointnet/Ch7.1_introduction/callbacks_outputs/
+Ch7_dpointnet/Ch7.1_introduction/training_uniform_fr/
