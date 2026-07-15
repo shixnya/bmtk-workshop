@@ -27,7 +27,7 @@ import numpy as np
 # ── network sizes ──────────────────────────────────────────────────────────────────────────────
 N_E = 240              # excitatory neurons  ) 300 total, a 4:1 E:I ratio (as in cortex)
 N_I = 60               # inhibitory neurons  )
-N_DRIVE = 100          # external drive input units (unused here; see W_DRIVE below)
+N_DRIVE = 100          # external input population (required by dpointnet training; see "input connectivity")
 N_BKG = 100            # background-noise units (dpointnet generates their Poisson spikes internally)
 
 # ── initial weight gains ─────────────────────────────────────────────────────────────────────────
@@ -51,9 +51,11 @@ DELAY_E, DELAY_IE = 1.5, 4.0
 DELAY_JITTER = 1.5     # +/- ms uniform jitter per edge (so the I->E delay spans ~2.5-5.5 ms)
 
 # ── input connectivity ─────────────────────────────────────────────────────────────────────────
-# W_DRIVE=0: the external "drive" pathway is disabled for the gamma tutorial (it carries the
-# auditory input in Tutorial 2; the gamma network is driven by the background alone). The drive
-# population/edges are still built, for parity with Tutorial 2, but contribute nothing here.
+# The gamma network is driven by the BACKGROUND alone. The "drive" population is nonetheless required:
+# dpointnet's training input pipeline (the DataIterator) expects at least one EXTERNAL spike-generator
+# population, and the background (bkg) is generated INTERNALLY (in-graph), so it does not satisfy that.
+# 'drive' is that required external channel. We set W_DRIVE=0 so it contributes no current — it is
+# structurally present but dynamically inert.
 P_DRIVE, W_DRIVE, DELAY_DRIVE = 0.5, 0.0, 1.5
 P_BKG, W_BKG, DELAY_BKG = 1.0, 0.05, 1.5           # P_BKG=1.0: every cell gets background => all active
 
